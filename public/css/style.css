@@ -1,0 +1,151 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    /* align-items: center;  原始的垂直居中 */
+    align-items: flex-start; /* 修改为顶部对齐，内容会靠上 */
+    padding-top: 50px; /* 增加顶部内边距，让内容整体下移一点，达到中上的效果 */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* 玻璃模糊特效 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 80%;
+    max-width: 900px;
+    /* margin: 0 auto;  如果使用了 margin auto 居中，需要移除 */
+    /* text-align: center;  如果 container 内部文字居中，需要移除或修改 */
+    text-align: left; /* 确保 container 内部文字左对齐 */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left; /* 确保 header 内部文字左对齐 */
+}
+
+.header-left {
+    display: flex;
+    text-align: left; /* 确保 header-left 内部文字左对齐 */
+}
+
+.upload-btn, .create-folder-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    text-align: left; /* 确保按钮内部文字左对齐 (虽然这里没有文字，但为了统一) */
+}
+
+.upload-btn:hover, .create-folder-btn:hover {
+    opacity: 1;
+}
+
+.upload-icon, .create-folder-icon {
+    width: 24px;
+    height: 24px;
+    fill: #333; /* SVG 图标颜色 */
+}
+
+
+.file-list {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left; /* 确保表格整体左对齐 */
+}
+
+.file-list th, .file-list td {
+    padding: 10px;
+    text-align: left; /* 确保表格单元格文字左对齐 (默认已经是 left) */
+    border-bottom: 1px solid #eee;
+}
+
+.file-list th {
+    font-weight: bold;
+    text-align: left; /* 确保表头文字左对齐 (默认已经是 left，再次强调) */
+}
+
+.file-list tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* 鼠标悬停行背景色 */
+    text-align: left; /* 确保鼠标悬停行文字左对齐 */
+}
+
+.file-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    text-align: left; /* 确保按钮内部文字左对齐 (虽然这里没有文字，但为了统一) */
+}
+
+.file-actions button:hover {
+    opacity: 1;
+}
+
+.delete-icon {
+    width: 18px;
+    height: 18px;
+    fill: #d9534f; /* 删除图标颜色 (红色) */
+}
+
+.progress-container { /*  <---  SweetAlert2 模态框中的进度条容器样式 */
+    width: 100%; /*  宽度 100% 填充模态框内容区域 */
+    height: 20px;
+    border-radius: 10px;
+    background-color: #eee;
+    overflow: hidden;
+    margin-top: 15px; /*  与提示文字之间增加间距 */
+    margin-bottom: 5px; /*  与底部按钮之间增加间距 (如果需要) */
+    display: flex;
+    align-items: center;
+}
+
+
+.progress-bar { /*  <---  进度条样式 (复用之前的样式，无需修改) */
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: width 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-value { /*  <---  进度值样式 (复用之前的样式，无需修改) */
+    font-size: 0.8em;
+    z-index: 1;
+}
+
+.footer {
+    /* text-align: center;  移除 text-align: center */
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    position: fixed; /*  <---  添加 position: fixed; */
+    bottom: 0; /*  <---  固定在底部 */
+    right: 0; /*  <---  固定在右侧 */
+    text-align: right; /*  <---  页脚内容文字右对齐 */
+    padding-right: 30px; /*  <---  增加右内边距，避免文字紧贴边缘 */
+    backdrop-filter: blur(10px); /*  <---  添加玻璃模糊效果，与 container 保持一致 */
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.18); /*  <---  边框颜色与 container 保持一致 */
+}
+/* 更多样式可以根据你的喜好添加 */
